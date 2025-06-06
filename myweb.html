@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนะนำตัวฉัน</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 30px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            color: #777;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-img">👤</div>
+            <h1>สวัสดีครับ! ฉันคือ ชื</h1>
+            <p>ยินดีที่ได้รู้จักกับทุกคน</p>
+        </header>
+
+        <main class="main-content">
+            <div class="card">
+                <h2>
+                    <div class="card-icon">ℹ️</div>
+                    ข้อมูลส่วนตัว
+                </h2>
+                <div class="info-item">
+                    <div class="info-label">ชื่อ-นามสกุล:</div>
+                    <div class="info-value">ชื</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">อายุ:</div>
+                    <div class="info-value">[อายุของคุณ] ปี</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">ที่อยู่:</div>
+                    <div class="info-value">[ที่อยู่ของคุณ]</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">อาชีพ:</div>
+                    <div class="info-value">[อาชีพของคุณ]</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>
+                    <div class="card-icon">🎓</div>
+                    การศึกษา
+                </h2>
+                <div class="info-item">
+                    <div class="info-label">ระดับการศึกษา:</div>
+                    <div class="info-value">[ระดับการศึกษาของคุณ]</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">สถาบัน:</div>
+                    <div class="info-value">[ชื่อสถาบัน/มหาวิทยาลัย]</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">สาขาที่เรียน:</div>
+                    <div class="info-value">[สาขาวิชาที่เรียน]</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">ปีที่จบ:</div>
+                    <div class="info-value">[ปีที่จบการศึกษา]</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>
+                    <div class="card-icon">💼</div>
+                    ประสบการณ์การทำงาน
+                </h2>
+                <div class="info-item">
+                    <div class="info-label">ตำแหน่งปัจจุบัน:</div>
+                    <div class="info-value">[ตำแหน่งงานปัจจุบัน]</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">บริษัท/องค์กร:</div>
+                    <div class="info-value">[ชื่อบริษัท/องค์กร]</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">ประสบการณ์:</div>
+                    <div class="info-value">[จำนวนปีประสบการณ์]</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">หน้าที่รับผิดชอบ:</div>
+                    <div class="info-value">[หน้าที่รับผิดชอบหลัก]</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>
+                    <div class="card-icon">⚡</div>
+                    ทักษะและความสามารถ
+                </h2>
+                <div class="skills">
+                    <span class="skill-tag">การสื่อสาร</span>
+                    <span class="skill-tag">การทำงานเป็นทีม</span>
+                    <span class="skill-tag">การแก้ปัญหา</span>
+                    <span class="skill-tag">ภาษาอังกฤษ</span>
+                    <span class="skill-tag">คอมพิวเตอร์</span>
+                    <span class="skill-tag">การบริหารจัดการ</span>
+                    <span class="skill-tag">[ทักษะพิเศษของคุณ]</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>
+                    <div class="card-icon">🎯</div>
+                    เป้าหมายและความสนใจ
+                </h2>
+                <div class="info-item">
+                    <div class="info-label">เป้าหมายในอนาคต:</div>
+                    <div class="info-value">[เป้าหมายในอนาคตของคุณ]</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">งานอดิเรก:</div>
+                    <div class="info-value">[งานอดิเรกที่ชอบ]</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">ความสนใจพิเศษ:</div>
+                    <div class="info-value">[สิ่งที่สนใจเป็นพิเศษ]</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>
+                    <div class="card-icon">📞</div>
+                    ติดต่อฉัน
+                </h2>
+                <div class="contact-links">
+                    <a href="mailto:your-email@example.com" class="contact-link">
+                        📧 อีเมล
+                    </a>
+                    <a href="tel:+66-xxx-xxx-xxxx" class="contact-link">
+                        📱 โทรศัพท์
+                    </a>
+                    <a href="#" class="contact-link">
+                        💬 Line
+                    </a>
+                    <a href="#" class="contact-link">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 ชื. ขอบคุณที่เข้าชมเว็บไซต์</p>
+        </footer>
+    </div>
+
+    <script>
+        // เพิ่มเอฟเฟกต์การเลื่อนหน้าจอ
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardVisible = 150;
+                
+                if (cardTop < window.innerHeight - cardVisible) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // เพิ่มเอฟเฟกต์คลิกที่ทักษะ
+        document.querySelectorAll('.skill-tag').forEach(skill => {
+            skill.addEventListener('click', () => {
+                skill.style.background = 'linear-gradient(45deg, #ff6b6b, #4ecdc4)';
+                setTimeout(() => {
+                    skill.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
+                }, 300);
+            });
+        });
+
+        // เพิ่มเอฟเฟกต์ hover ที่รูปโปรไฟล์
+        document.querySelector('.profile-img').addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.1) rotate(10deg)';
+        });
+
+        document.querySelector('.profile-img').addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        });
+    </script>
+</body>
+</html>
